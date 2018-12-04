@@ -2,13 +2,10 @@ const $ = document.querySelector.bind(document);
 
 $(".open-overlay").addEventListener("click", () => {
   let overlay_navigation = $(".overlay-navigation");
-  let nav_item_1 = $("nav li:nth-of-type(1)");
-  let nav_item_2 = $("nav li:nth-of-type(2)");
-  let nav_item_3 = $("nav li:nth-of-type(3)");
-  let nav_item_4 = $("nav li:nth-of-type(4)");
   let top_bar = $(".bar-top");
   let middle_bar = $(".bar-middle");
   let bottom_bar = $(".bar-bottom");
+  let nav_items = document.querySelectorAll("nav ul li");
 
   overlay_navigation.classList.toggle("overlay-active");
 
@@ -25,17 +22,14 @@ $(".open-overlay").addEventListener("click", () => {
     overlay_navigation.classList.remove("overlay-slide-up");
     overlay_navigation.classList.add("overlay-slide-down");
 
-    nav_item_1.classList.remove("slide-in-nav-item-reverse");
-    nav_item_1.classList.add("slide-in-nav-item");
-
-    nav_item_2.classList.remove("slide-in-nav-item-delay-1-reverse");
-    nav_item_2.classList.add("slide-in-nav-item-delay-1");
-
-    nav_item_3.classList.remove("slide-in-nav-item-delay-2-reverse");
-    nav_item_3.classList.add("slide-in-nav-item-delay-2");
-
-    nav_item_4.classList.remove("slide-in-nav-item-delay-3-reverse");
-    nav_item_4.classList.add("slide-in-nav-item-delay-3");
+    for (let i = 0; i < nav_items.length; i++) {
+      nav_items[i].classList.remove(
+        `slide-in-nav-item${i <= 0 ? "" : "-delay-" + i}-reverse`
+      );
+      nav_items[i].classList.add(
+        `slide-in-nav-item${i <= 0 ? "" : "-delay-" + i}`
+      );
+    }
   } else {
     top_bar.classList.remove("animate-top-bar");
     top_bar.classList.add("animate-out-top-bar");
@@ -49,16 +43,13 @@ $(".open-overlay").addEventListener("click", () => {
     overlay_navigation.classList.remove("overlay-slide-down");
     overlay_navigation.classList.add("overlay-slide-up");
 
-    nav_item_1.classList.remove("slide-in-nav-item");
-    nav_item_1.classList.add("slide-in-nav-item-reverse");
-
-    nav_item_2.classList.remove("slide-in-nav-item-delay-1");
-    nav_item_2.classList.add("slide-in-nav-item-delay-1-reverse");
-
-    nav_item_3.classList.remove("slide-in-nav-item-delay-2");
-    nav_item_3.classList.add("slide-in-nav-item-delay-2-reverse");
-
-    nav_item_4.classList.remove("slide-in-nav-item-delay-3");
-    nav_item_4.classList.add("slide-in-nav-item-delay-3-reverse");
+    for (let i = 0; i < nav_items.length; i++) {
+      nav_items[i].classList.remove(
+        `slide-in-nav-item${i <= 0 ? "" : "-delay-" + i}`
+      );
+      nav_items[i].classList.add(
+        `slide-in-nav-item${i <= 0 ? "" : "-delay-" + i}-reverse`
+      );
+    }
   }
 });
