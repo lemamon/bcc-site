@@ -1,29 +1,17 @@
 {
-  "name": "bcc",
-  "version": "1.0.0",
-  "description": "Portifolio site",
-  "main": "index.js",
-  "author": "lemamon",
+  "name": "gatsby-starter-hello-world",
+  "description": "Gatsby hello world starter",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp",
-    "dev": "gulp server",
-    "build": "gulp build",
-    "start": "gulp build && gulp production"
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
   },
-  "devDependencies": {
-    "browser-sync": "^2.9.8",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-clean": "^0.3.1",
-    "gulp-csslint": "^0.2.0",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-jshint": "^1.11.2",
-    "gulp-uglify-es": "^1.0.4",
-    "gulp-usemin": "^0.3.14",
-    "jshint-stylish": "^2.0.1"
+  "dependencies": {
+    "gatsby": "^1.9.153",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-netlify-cms": "^1.0.0",
+    "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.28"
   }
 }
