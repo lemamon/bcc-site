@@ -19,6 +19,7 @@ coverage
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 public
+.cache
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
