@@ -477,16 +477,36 @@ Animation keyframes
 
 footer {
   margin-top: 10vh;
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  align-items: center;
   justify-content: space-around;
-  width: 90vw;
+}
+
+@media (max-width: 490px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  footer div {
+    margin-top: 20px;
+  }
 }
 
 footer ul {
   display: flex;
   flex-direction: row;
+}
+
+footer ul li {
+  margin-right: 40px;
+}
+
+footer ul li:last-child {
+  margin-right: 0;
 }
 
 footer ul li img {
